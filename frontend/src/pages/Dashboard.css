@@ -1,0 +1,1002 @@
+/* Layout container */
+.page-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Section spacing */
+  .section-spacing {
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Card base style */
+  .card {
+    background: rgba(255 255 255 / 0.75);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    backdrop-filter: saturate(180%) blur(10px);
+    border: 1px solid rgba(255 255 255 / 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Glass hover effect on card */
+  .card:hover,
+  .card:focus-within {
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+    background: rgba(255 255 255 / 0.85);
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(37, 99, 235, 0.4);
+    outline: none;
+  }
+  
+  /* Card header stylings */
+  .card-header {
+    margin-bottom: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.25rem;
+    user-select: text;
+  }
+  
+  .card-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    user-select: text;
+  }
+  
+  /* Grid layouts */
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .lg\:col-span-2 {
+      grid-column: span 2 / span 2;
+    }
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  /* Text styles */
+  .text-gray-900 {
+    color: #111827;
+  }
+  
+  .text-gray-600 {
+    color: #4b5563;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  /* Flex utilities */
+  .flex {
+    display: flex;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+  
+  /* Quick stats section */
+  .space-y-4 > div {
+    padding: 0.5rem 0;
+  }
+  
+  /* Loading spinner position fix */
+  .min-h-screen {
+    min-height: 100vh;
+    background-color: #f9fafb;
+  }
+  
+  /* Adding subtle fade-in animation for entire dashboard on load */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .page-container {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  /* Scroll bar styling for very long content - optional */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(37, 99, 235, 0.4);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  
+/* Interactive elements default focus outline */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* ===============================================
+   COMMUNITY USAGE INPUT FORM STYLES
+   =============================================== */
+
+/* Main container */
+.usage-form-container {
+  background: rgba(255 255 255 / 0.75);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  backdrop-filter: saturate(180%) blur(10px);
+  border: 1px solid rgba(255 255 255 / 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.usage-form-container:hover {
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Form header */
+.form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Loading and empty states */
+.loading-state, .empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #6b7280;
+}
+
+.loading-state .spinner, .submit-btn .spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+.submit-btn .spinner {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.5rem 0 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.empty-state p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.help-text {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-weight: 400 !important;
+}
+
+/* Form grid layout */
+.usage-form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Form inputs */
+.form-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+}
+
+.form-input:hover {
+  border-color: #9ca3af;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-input.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.form-input.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Select styling */
+select.form-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Textarea styling */
+textarea.form-input {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Form validation */
+.form-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.form-help {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* Energy calculation display */
+.calculation-display {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+  border: 2px solid rgba(37, 99, 235, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.calculation-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.calculation-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.calculation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.calc-item.calc-total {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15));
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  font-weight: 600;
+  grid-column: 1 / -1;
+}
+
+.calc-label {
+  color: #374151;
+  font-weight: 500;
+}
+
+.calc-value {
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.calc-total .calc-value {
+  color: #059669;
+  font-size: 1.25rem;
+}
+
+.calculation-formula {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  border: 1px dashed rgba(107, 114, 128, 0.3);
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem 0;
+  padding: 1rem;
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 0.5rem;
+}
+
+.checkbox-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #059669;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.submit-btn:disabled,
+.submit-btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  box-shadow: 0 2px 8px rgba(156, 163, 175, 0.3);
+}
+
+.submit-btn:disabled:hover,
+.submit-btn.loading:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(156, 163, 175, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .usage-form-container {
+    padding: 1.5rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .calculation-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+  
+  .submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .usage-form-container,
+  .form-input,
+  .submit-btn,
+  .calculation-display::before {
+    animation: none;
+    transition: none;
+  }
+  
+  .submit-btn:hover,
+  .usage-form-container:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-input {
+    border-width: 3px;
+  }
+  
+  .calculation-display {
+    border-width: 3px;
+  }
+  
+  .submit-btn {
+    border: 2px solid #ffffff;
+  }
+}
+
+/* ===============================================
+   COMPACT FORM STYLES & PROFESSIONAL LAYOUTS
+   =============================================== */
+
+/* Compact Usage Input Form */
+.usage-input-card {
+  background: rgba(255 255 255 / 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.6);
+}
+
+.form-group.compact {
+  margin-bottom: 0.75rem;
+}
+
+.form-label.compact {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.375rem;
+  display: block;
+}
+
+.form-input.compact,
+.form-select.compact {
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.form-input.compact:focus,
+.form-select.compact:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-error.compact {
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.btn.compact {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Professional Stats Card */
+.stats-card .card-header {
+  margin-bottom: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stat-item {
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.2s ease;
+}
+
+.stat-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.stat-unit {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Weather Card */
+.weather-card .card-header {
+  margin-bottom: 1rem;
+}
+
+.weather-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.weather-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(249, 250, 251, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  transition: background-color 0.2s ease;
+}
+
+.weather-item:hover {
+  background: rgba(243, 244, 246, 0.7);
+}
+
+.weather-time {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.weather-details {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.weather-condition {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.weather-temp {
+  color: #374151;
+  font-weight: 600;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+/* Gap utilities */
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* ===============================================
+   CHARTS GRID & PROFESSIONAL ENERGY CARDS
+   =============================================== */
+
+/* Charts Grid Layout */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-card {
+  min-height: 400px;
+}
+
+.card-header.compact {
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usage-trend-card {
+  background: rgba(255 255 255 / 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.6);
+}
+
+/* Professional Energy Cards */
+.energy-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.energy-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid;
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.energy-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.energy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--card-color, #3b82f6), transparent);
+  border-radius: 16px 16px 0 0;
+}
+
+.energy-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.energy-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.energy-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.energy-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.energy-card-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.energy-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.energy-unit {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Compact Weather Card */
+.weather-card.compact {
+  background: rgba(255 255 255 / 0.9);
+  border: 1px solid rgba(229, 231, 235, 0.6);
+}
+
+.weather-list.compact {
+  gap: 0.5rem;
+}
+
+.weather-item.compact {
+  padding: 0.5rem 0.75rem;
+  background: rgba(249, 250, 251, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(229, 231, 235, 0.4);
+}
+
+.weather-item.compact:hover {
+  background: rgba(243, 244, 246, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .lg-grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .lg-col-span-2 {
+    grid-column: span 1;
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .energy-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .chart-card {
+    min-height: 350px;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .energy-cards-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .energy-card {
+    padding: 1rem;
+  }
+  
+  .energy-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .energy-value {
+    font-size: 1.875rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .weather-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .weather-details {
+    align-self: stretch;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .energy-cards-container {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .energy-card {
+    padding: 1rem;
+  }
+  
+  .energy-card-header {
+    gap: 0.5rem;
+  }
+  
+  .energy-card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .energy-value {
+    font-size: 1.5rem;
+  }
+  
+  .energy-unit {
+    font-size: 0.875rem;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+}
+  

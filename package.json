@@ -1,0 +1,19 @@
+{
+  "name": "smart-energy-optimizer",
+  "version": "1.0.0",
+  "description": "A full-stack Smart Energy Consumption Optimizer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:ml": "cd ml-service && python -m uvicorn main:app --reload --port 8001",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../ml-service && pip install -r requirements.txt"
+  },
+  "keywords": ["energy", "optimization", "renewable", "smart-grid"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

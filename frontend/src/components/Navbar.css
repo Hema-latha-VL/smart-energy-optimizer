@@ -1,0 +1,189 @@
+/* Reset and base */
+* {
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    justify-content: space-between;
+  }
+  
+  /* Logo */
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    user-select: none;
+  }
+  
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #2563eb; /* Tailwind blue-600 */
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .logo-icon:hover {
+    background-color: #1e40af; /* darker blue */
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827; /* Tailwind gray-900 */
+    user-select: none;
+  }
+  
+  /* Nav Links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: #374151; /* Tailwind gray-700 */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+  }
+  
+  /* Glass hover effect */
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    background: rgba(255 255 255 / 0.3);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #2563eb; /* blue */
+  }
+  
+  .nav-link:hover::before,
+  .nav-link:focus::before {
+    opacity: 1;
+  }
+  
+  /* User Section */
+  .user-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  
+  .user-welcome {
+    color: #6b7280; /* Tailwind gray-500 */
+    font-weight: 600;
+  }
+  
+  /* Buttons */
+  .btn-logout,
+  .btn-signup {
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    user-select: none;
+  }
+  
+  .btn-logout {
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    color: #374151;
+  }
+  
+  .btn-logout:hover,
+  .btn-logout:focus {
+    background-color: #e5e7eb; /* Tailwind gray-200 */
+  }
+  
+  .btn-signup {
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-signup:hover,
+  .btn-signup:focus {
+    background-color: #1e40af; /* darker blue */
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: none;
+  }
+  
+  .mobile-menu-btn button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: #4b5563; /* Tailwind gray-600 */
+    transition: color 0.3s ease;
+  }
+  
+  .mobile-menu-btn button:hover,
+  .mobile-menu-btn button:focus {
+    color: #111827; /* Tailwind gray-900 */
+  }
+  
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .nav-links,
+    .user-section {
+      display: none;
+    }
+    .mobile-menu-btn {
+      display: block;
+    }
+  }
+  

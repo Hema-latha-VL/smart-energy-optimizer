@@ -1,0 +1,385 @@
+/* Container and layout */
+.page-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .content-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Header styles */
+  .tips-header {
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    user-select: none;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    user-select: none;
+  }
+  
+  /* Category filter */
+  .category-filter {
+    margin-bottom: 2rem;
+  }
+  
+  .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .category-btn {
+    background: white;
+    color: #4b5563;
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+    user-select: none;
+    outline-offset: 3px;
+  }
+  
+  .category-btn:hover,
+  .category-btn:focus-visible {
+    background-color: rgba(255 255 255 / 0.75);
+    color: #2563eb;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    border-color: #2563eb;
+    transform: scale(1.05);
+  }
+  
+  .category-btn.active {
+    background-color: #2563eb;
+    color: white;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    border-color: transparent;
+    transform: scale(1.1);
+  }
+  
+  /* Tips Grid */
+  .tips-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .tips-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .tips-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Tip Card */
+  .tip-card {
+    background: rgba(255 255 255 / 0.75);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: saturate(180%) blur(12px);
+    border: 1px solid rgba(255 255 255 / 0.3);
+    display: flex;
+    gap: 1rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+    cursor: default;
+    user-select: none;
+    outline-offset: 3px;
+  }
+  
+  .tip-card:hover,
+  .tip-card:focus-within {
+    background: rgba(255 255 255 / 0.9);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(37, 99, 235, 0.4);
+    outline: none;
+  }
+  
+  /* Tip Icon */
+  .tip-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    user-select: none;
+  }
+  
+  /* Tip Content */
+  .tip-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tip-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tip-description {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .tip-impact {
+    background: #dcfce7; /* green-50 */
+    border: 1px solid #bbf7d0; /* green-200 */
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .tip-impact p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #166534; /* green-800 */
+    user-select: none;
+  }
+  
+  /* Additional Resources CTA */
+  .resources-cta {
+    margin-top: 4rem;
+    background: linear-gradient(to right, #2563eb, #7c3aed);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+    color: white;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .resources-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .resources-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Buttons inside CTA */
+  .resources-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  /* Glass effect on buttons */
+  .btn-primary::before,
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem; /* Match main button rounded corners */
+  background: rgba(255 255 255 / 0.25);
+  backdrop-filter: blur(12px); /* Slightly stronger blur for better frosted look */
+  -webkit-backdrop-filter: blur(12px); /* Safari prefix */
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: -1;
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
+}
+
+/* Make the glass overlay visible on hover/focus */
+.btn-primary:hover::before,
+.btn-primary:focus-visible::before,
+.btn-secondary:hover::before,
+.btn-secondary:focus-visible::before {
+  opacity: 1;
+  background: rgba(255 255 255 / 0.4); /* Slightly more opaque on hover/focus */
+}
+
+  
+  .btn-primary:hover::before,
+  .btn-primary:focus-visible::before,
+  .btn-secondary:hover::before,
+  .btn-secondary:focus-visible::before {
+    opacity: 1;
+  }
+  
+  /* Primary button */
+  .btn-primary {
+    background-color: white;
+    color: #2563eb;
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #f3f4f6;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.45);
+  }
+  
+  /* Secondary button */
+  .btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    box-shadow: none;
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    background-color: white;
+    color: #2563eb;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* Savings Calculator */
+  .savings-calculator {
+    margin-top: 4rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.05);
+    padding: 3rem 2rem;
+    user-select: none;
+    text-align: center;
+  }
+  
+  .calculator-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #111827;
+  }
+  
+  /* Calculator Grid */
+  .calculator-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .calculator-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .calculator-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  /* Calculator icons with colored backgrounds */
+  .calculator-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 9999px;
+    font-size: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+  
+  .blue-bg {
+    background-color: #dbeafe; /* blue-100 */
+    color: #2563eb;
+  }
+  
+  .green-bg {
+    background-color: #dcfce7; /* green-100 */
+    color: #16a34a;
+  }
+  
+  .purple-bg {
+    background-color: #ede9fe; /* purple-100 */
+    color: #7c3aed;
+  }
+  
+  /* Highlight and text colors */
+  .highlight {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 0.25rem;
+  }
+  
+  .blue-text {
+    color: #2563eb;
+  }
+  
+  .green-text {
+    color: #16a34a;
+  }
+  
+  .purple-text {
+    color: #7c3aed;
+  }
+  
+  .small-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  /* Focus outlines for accessibility */
+  :focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+  }
+  

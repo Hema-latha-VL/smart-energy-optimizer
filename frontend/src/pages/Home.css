@@ -1,0 +1,455 @@
+/* Base Section Padding */
+.section-padding-lg {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.15;
+  }
+  
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 3.75rem;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #bfdbfe;
+    line-height: 1.5;
+  }
+  
+  /* Button Group */
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  /* Glass effect on hover */
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background: rgba(255 255 255 / 0.25);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    opacity: 1;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    background-color: white;
+    color: #2563eb;
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #f9fafb;
+    box-shadow: 0 12px 20px rgba(37, 99, 235, 0.4);
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    box-shadow: none;
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    background-color: white;
+    color: #2563eb;
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* Features Section */
+  .features-section {
+    background-color: white;
+    color: #374151;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  
+  /* Feature Cards container */
+  .feature-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .feature-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Individual Feature Cards */
+  .feature-card {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-card:hover,
+  .feature-card:focus-within {
+    background-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Glass effect for card icon on hover */
+  .feature-card:hover .feature-icon,
+  .feature-card:focus-within .feature-icon {
+    background: rgba(255 255 255 / 0.4);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Feature Icon base */
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 9999px;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Colored backgrounds for feature icons */
+  .feature-card.green .feature-icon {
+    background-color: #d1fae5; /* Tailwind green-100 */
+  }
+  
+  .feature-card.blue .feature-icon {
+    background-color: #dbeafe; /* Tailwind blue-100 */
+  }
+  
+  .feature-card.purple .feature-icon {
+    background-color: #ede9fe; /* Tailwind purple-100 */
+  }
+  
+  /* Feature Card Text */
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+  
+  /* How It Works Section */
+  
+  .how-it-works {
+    background-color: #f9fafb;
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media(min-width: 640px) {
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media(min-width: 1024px) {
+    .steps-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .step-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    user-select: none;
+    cursor: default;
+  }
+  
+  .step-card:hover,
+  .step-card:focus-within {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  }
+  
+  .step-number {
+    width: 64px;
+    height: 64px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  
+  /* Step Card Text */
+  .step-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #111827;
+  }
+  
+  .step-card p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+  }
+  
+  .section-title-light {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .section-title-light {
+      font-size: 3rem;
+    }
+  }
+  
+  .section-subtitle-light {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #bfdbfe;
+    line-height: 1.5;
+  }
+  
+  /* Primary Button variant for CTA (lighter style) */
+  .btn-primary-light {
+    background-color: white;
+    color: #2563eb;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    user-select: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .btn-primary-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background: rgba(255 255 255 / 0.25);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .btn-primary-light:hover::before,
+  .btn-primary-light:focus-visible::before {
+    opacity: 1;
+  }
+  
+  .btn-primary-light:hover,
+  .btn-primary-light:focus {
+    background-color: #f9fafb;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.45);
+  }
+  
+  /* Footer Styles */
+  .footer-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .footer-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    user-select: none;
+  }
+  
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .footer-logo-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer-logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+  
+  .footer-logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    user-select: none;
+  }
+  
+  .footer-description {
+    color: #9ca3af;
+    line-height: 1.5;
+    max-width: 300px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover,
+  .footer-links a:focus {
+    color: white;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #1f2937;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+    user-select: none;
+  }
+  

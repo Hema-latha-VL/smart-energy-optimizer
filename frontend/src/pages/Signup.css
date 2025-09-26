@@ -1,0 +1,87 @@
+.signup-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f8fafc;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  max-width: 600px;  /* Increased width */
+  margin: 0 auto;
+}
+
+.signup-form-wrapper {
+  max-width: 600px; /* Increased container max-width for wider form */
+  width: 100%;
+  background: rgba(255 255 255 / 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  box-shadow:
+    0 4px 30px rgba(37, 99, 235, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Checkbox group for terms */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-input {
+  width: 20px;  /* Larger checkbox */
+  height: 20px;
+  border-radius: 0.25rem;
+  border: 1.5px solid #2563eb; /* Blue border */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  appearance: none;  /* Remove default styling */
+  position: relative;
+}
+
+.checkbox-input:checked {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.checkbox-input:checked::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-input:focus {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
+}
+
+.checkbox-label {
+  font-size: 0.875rem;
+  color: #111827;
+  user-select: none;
+  cursor: pointer;
+  line-height: 1.25;
+}
+
+.checkbox-label a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.checkbox-label a:hover,
+.checkbox-label a:focus {
+  color: #1e40af;
+  text-decoration: underline;
+}
